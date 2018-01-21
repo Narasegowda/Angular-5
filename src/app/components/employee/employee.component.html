@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>View Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.name}}</td>
+            <td>{{emp.age}}</td>
+            <td>
+                <button (click)="onViewClick(emp)">View</button>  
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="selectedEmployee">
+    <h2>Employee Details</h2>
+    <p>Name is {{selectedEmployee.name}}</p>
+    <p>Age is {{selectedEmployee.age}}</p>
+</div> 
