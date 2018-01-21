@@ -1,5 +1,8 @@
+<app-header count="{{employeeList.length}}"></app-header>
+<app-header count="2"></app-header>
+<app-header count="1"></app-header>
 <input #myinput>
 <button (click)="sayGreeting($event, myinput.value)">
     Greet
 </button>       
-<app-employee></app-employee>
+<app-employee [myList]="employeeList"></app-employee>

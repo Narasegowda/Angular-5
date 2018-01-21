@@ -1,9 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-interface Employee {
-  name: string;
-  age: number;
-}
+import { Component, OnInit, Input } from '@angular/core';
+import { Person } from '../../models/Person';
 
 @Component({
   selector: 'app-employee',
@@ -11,23 +7,15 @@ interface Employee {
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-  selectedEmployee: Employee;
-  employees: Array<Employee> = [
-    {
-      name: 'Arjun',
-      age: 20
-    },
-    {
-      name: 'Kishore',
-      age: 21
-    }
-  ];
+  selectedEmployee: Person;
+  @Input() myList: Array<Person>;
+
   constructor() { }
 
   ngOnInit() {
   }
   
-  onViewClick(empDetails: Employee){
+  onViewClick(empDetails: Person){
     this.selectedEmployee =  empDetails;
   }
 
